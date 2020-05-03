@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Austin Austin | Austin Baird</title>
+    <link>//localhost:1313/authors/austin-austin/</link>
+      <atom:link href="//localhost:1313/authors/austin-austin/index.xml" rel="self" type="application/rss+xml" />
+    <description>Austin Austin</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 26 Apr 2020 20:00:32 -0400</lastBuildDate>
+    <image>
+      <url>//localhost:1313/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Austin Austin</title>
+      <link>//localhost:1313/authors/austin-austin/</link>
+    </image>
+    
+    <item>
+      <title>Test</title>
+      <link>//localhost:1313/post/test/</link>
+      <pubDate>Sun, 26 Apr 2020 20:00:32 -0400</pubDate>
+      <guid>//localhost:1313/post/test/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

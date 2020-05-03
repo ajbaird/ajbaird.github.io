@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors | Austin Baird</title>
+    <link>//localhost:1313/authors/</link>
+      <atom:link href="//localhost:1313/authors/index.xml" rel="self" type="application/rss+xml" />
+    <description>Authors</description>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 26 Apr 2020 20:00:32 -0400</lastBuildDate>
+    <image>
+      <url>//localhost:1313/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <title>Authors</title>
+      <link>//localhost:1313/authors/</link>
+    </image>
+    
+    <item>
+      <title>Austin Austin</title>
+      <link>//localhost:1313/authors/austin-austin/</link>
+      <pubDate>Sun, 26 Apr 2020 20:00:32 -0400</pubDate>
+      <guid>//localhost:1313/authors/austin-austin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>//localhost:1313/authors/admin/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/admin/</guid>
+      <description>&lt;p&gt;My research focuses on mathematical modeling of biological systems, specifically fluid-structure interaction, mathematical models in physiology, and dynamical system applications. At ARA, I am the principal investigator of the BioGears project, the Virtual Patient (BurnCare) project, and the BioGears follow-on effort.&lt;/p&gt;
+&lt;p&gt;My doctoral work focused on fully coupled fluid-structure interactions in modeling the invertebrate valveless tubular heart and the integration of a cardiac muscle cell model. I spent a year at Duke University as a visiting professor studying re-absorption mechanisms of the kidney and blood cell  aggregation and  de-aggregation in  the  capillaries due to peristaltic  pumping  mechanisms.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Jonathan M. Keller</title>
+      <link>//localhost:1313/authors/jonathan-m.-keller/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/jonathan-m.-keller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Laura A. Miller</title>
+      <link>//localhost:1313/authors/laura-a.-miller/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/laura-a.-miller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matthew McDaniel</title>
+      <link>//localhost:1313/authors/matthew-mcdaniel/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/matthew-mcdaniel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steven A. White</title>
+      <link>//localhost:1313/authors/steven-a.-white/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/steven-a.-white/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tiffany King</title>
+      <link>//localhost:1313/authors/tiffany-king/</link>
+      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/tiffany-king/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lindsay Waldrop</title>
+      <link>//localhost:1313/authors/lindsay-waldrop/</link>
+      <pubDate>Tue, 27 Oct 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/lindsay-waldrop/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nick Battista</title>
+      <link>//localhost:1313/authors/nick-battista/</link>
+      <pubDate>Wed, 02 Sep 2015 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/authors/nick-battista/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

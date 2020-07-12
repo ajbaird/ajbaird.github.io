@@ -2,93 +2,93 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags | Austin Baird</title>
-    <link>//localhost:1313/tags/</link>
-      <atom:link href="//localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/</link>
+      <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <description>Tags</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 19 Oct 2019 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>//localhost:1313/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Tags</title>
-      <link>//localhost:1313/tags/</link>
+      <link>/tags/</link>
     </image>
     
     <item>
       <title>Source Themes</title>
-      <link>//localhost:1313/tags/source-themes/</link>
+      <link>/tags/source-themes/</link>
       <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/source-themes/</guid>
+      <guid>/tags/source-themes/</guid>
       <description></description>
     </item>
     
     <item>
       <title>BioGears</title>
-      <link>//localhost:1313/tags/biogears/</link>
+      <link>/tags/biogears/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/biogears/</guid>
+      <guid>/tags/biogears/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Brain Injry Model</title>
-      <link>//localhost:1313/tags/brain-injry-model/</link>
+      <link>/tags/brain-injry-model/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/brain-injry-model/</guid>
+      <guid>/tags/brain-injry-model/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Burn Physiology Modeling</title>
-      <link>//localhost:1313/tags/burn-physiology-modeling/</link>
+      <link>/tags/burn-physiology-modeling/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/burn-physiology-modeling/</guid>
+      <guid>/tags/burn-physiology-modeling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>C&#43;&#43;</title>
-      <link>//localhost:1313/tags/c&#43;&#43;/</link>
+      <link>/tags/c&#43;&#43;/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/c&#43;&#43;/</guid>
+      <guid>/tags/c&#43;&#43;/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Drug Modeling</title>
-      <link>//localhost:1313/tags/drug-modeling/</link>
+      <link>/tags/drug-modeling/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/drug-modeling/</guid>
+      <guid>/tags/drug-modeling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Physiology Modeling</title>
-      <link>//localhost:1313/tags/physiology-modeling/</link>
+      <link>/tags/physiology-modeling/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/physiology-modeling/</guid>
+      <guid>/tags/physiology-modeling/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Protien Ineraction</title>
-      <link>//localhost:1313/tags/protien-ineraction/</link>
+      <link>/tags/protien-ineraction/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/protien-ineraction/</guid>
+      <guid>/tags/protien-ineraction/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Unreal Engine 4</title>
-      <link>//localhost:1313/tags/unreal-engine-4/</link>
+      <link>/tags/unreal-engine-4/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/unreal-engine-4/</guid>
+      <guid>/tags/unreal-engine-4/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Academic</title>
-      <link>//localhost:1313/tags/academic/</link>
+      <link>/tags/academic/</link>
       <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/tags/academic/</guid>
+      <guid>/tags/academic/</guid>
       <description></description>
     </item>
     

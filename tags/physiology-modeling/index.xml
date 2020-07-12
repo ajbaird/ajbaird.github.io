@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Physiology Modeling | Austin Baird</title>
-    <link>//localhost:1313/tags/physiology-modeling/</link>
-      <atom:link href="//localhost:1313/tags/physiology-modeling/index.xml" rel="self" type="application/rss+xml" />
+    <link>/tags/physiology-modeling/</link>
+      <atom:link href="/tags/physiology-modeling/index.xml" rel="self" type="application/rss+xml" />
     <description>Physiology Modeling</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Wed, 27 Apr 2016 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>//localhost:1313/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
       <title>Physiology Modeling</title>
-      <link>//localhost:1313/tags/physiology-modeling/</link>
+      <link>/tags/physiology-modeling/</link>
     </image>
     
     <item>
       <title>BioGears</title>
-      <link>//localhost:1313/project/biogears/</link>
+      <link>/project/biogears/</link>
       <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
-      <guid>//localhost:1313/project/biogears/</guid>
+      <guid>/project/biogears/</guid>
       <description></description>
     </item>
     

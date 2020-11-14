@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Source Themes Academic 4.7.0">
+
+  
+
+  
+  
+  
+  
+  
+    
+    
+    
+  
+  
+
+  <meta name="author" content="Austin Baird">
+
+  
+  
+  
+    
+  
+  <meta name="description" content="Leveraging BioGears libraries to write your own HowTo We have BioGears built and ready to go but the question is, now what? What can we do with BioGears, how powerful is it and what type of applications can be build with it? These are some of the questions we will address in this tutorial on developing your own application leveraging BioGears API tools in C&#43;&#43;. In this tutorial you will learn to:">
+
+  
+  <link rel="alternate" hreflang="en-us" href="/post/firsthowto/">
+
+  
+
+
+  
+  
+  
+  <meta name="theme-color" content="#3f51b5">
+  
+
+  
+  
+
+  
+  
+  
+  
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+    
+    
+    
+      
+    
+    
+      
+      
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-light">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/github.min.css" crossorigin="anonymous" title="hl-dark" disabled>
+      
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+    
+
+    
+
+    
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.1.2/lazysizes.min.js" integrity="sha256-Md1qLToewPeKjfAHU1zyPwOutccPAm5tahnaw7Osw0A=" crossorigin="anonymous" async></script>
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+      
+
+      
+      
+        
+      
+
+      
+    
+      
+
+      
+      
+
+      
+    
+
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CRoboto:400,400italic,700%7CRoboto+Mono&display=swap">
+  
+
+  
+  
+  
+  
+  <link rel="stylesheet" href="/css/academic.css">
+
+  
+
+
+
+
+  
+
+
+  
+
+  <link rel="manifest" href="/index.webmanifest">
+  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+
+  <link rel="canonical" href="/post/firsthowto/">
+
+  
+  
+  
+  
+  
+    
+    
+  
+  
+  <meta property="twitter:card" content="summary">
+  
+  <meta property="og:site_name" content="Austin Baird">
+  <meta property="og:url" content="/post/firsthowto/">
+  <meta property="og:title" content="Hemorrhage Treatment HowTo | Austin Baird">
+  <meta property="og:description" content="Leveraging BioGears libraries to write your own HowTo We have BioGears built and ready to go but the question is, now what? What can we do with BioGears, how powerful is it and what type of applications can be build with it? These are some of the questions we will address in this tutorial on developing your own application leveraging BioGears API tools in C&#43;&#43;. In this tutorial you will learn to:"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  
+    
+      <meta property="article:published_time" content="2020-04-26T20:00:32-04:00">
+    
+    <meta property="article:modified_time" content="2020-04-26T20:00:32-04:00">
+  
+
+  
+
+
+    
+
+
+
+
+
+
+  
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "/post/firsthowto/"
+  },
+  "headline": "Hemorrhage Treatment HowTo",
+  
+  "datePublished": "2020-04-26T20:00:32-04:00",
+  "dateModified": "2020-04-26T20:00:32-04:00",
+  
+  "author": {
+    "@type": "Person",
+    "name": "Austin Baird"
+  },
+  
+  "publisher": {
+    "@type": "Organization",
+    "name": "Austin Baird",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+    }
+  },
+  "description": "Leveraging BioGears libraries to write your own HowTo We have BioGears built and ready to go but the question is, now what? What can we do with BioGears, how powerful is it and what type of applications can be build with it? These are some of the questions we will address in this tutorial on developing your own application leveraging BioGears API tools in C++. In this tutorial you will learn to:"
+}
+</script>
+
+  
+
+  
+
+
+  
+
+
+  
+
+
+
+
+
+  <title>Hemorrhage Treatment HowTo | Austin Baird</title>
+
+</head>
+
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+
+  <aside class="search-results" id="search">
+  <div class="container">
+    <section class="search-header">
+
+      <div class="row no-gutters justify-content-between mb-3">
+        <div class="col-6">
+          <h1>Search</h1>
+        </div>
+        <div class="col-6 col-search-close">
+          <a class="js-search" href="#"><i class="fas fa-times-circle text-muted" aria-hidden="true"></i></a>
+        </div>
+      </div>
+
+      <div id="search-box">
+        
+        
+        
+      </div>
+
+    </section>
+    <section class="section-search-results">
+
+      <div id="search-hits">
+        
+      </div>
+
+    </section>
+  </div>
+</aside>
+
+
+  
+
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
+  <div class="container">
+
+    
+    <div class="d-none d-lg-inline-flex">
+      <a class="navbar-brand" href="/">Austin Baird</a>
+    </div>
+    
+
+    
+    <button type="button" class="navbar-toggler" data-toggle="collapse"
+            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+    <span><i class="fas fa-bars"></i></span>
+    </button>
+    
+
+    
+    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
+      <a class="navbar-brand" href="/">Austin Baird</a>
+    </div>
+    
+
+    
+    
+    <div class="navbar-collapse main-menu-item collapse justify-content-start" id="navbar-content">
+
+      
+      <ul class="navbar-nav d-md-inline-flex">
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#posts"><span>Posts</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#publications"><span>Publications</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#cv"><span>CV</span></a>
+        </li>
+
+        
+        
+
+        
+
+        
+        
+        
+          
+        
+
+        
+        
+        
+        
+        
+        
+          
+          
+          
+            
+          
+          
+        
+
+        <li class="nav-item">
+          <a class="nav-link " href="/#experience"><span>Experience</span></a>
+        </li>
+
+        
+        
+
+      
+
+        
+      </ul>
+    </div>
+
+    <ul class="nav-icons navbar-nav flex-row ml-auto d-flex pl-md-2">
+      
+
+      
+      <li class="nav-item">
+        <a class="nav-link js-dark-toggle" href="#"><i class="fas fa-moon" aria-hidden="true"></i></a>
+      </li>
+      
+
+      
+
+    </ul>
+
+  </div>
+</nav>
+
+
+  <article class="article">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+  
+  
+<div class="article-container pt-3">
+  <h1>Hemorrhage Treatment HowTo</h1>
+
+  
+  <p class="page-subtitle">Create a program that monitors patient vitals during hemorrhage</p>
+  
+
+  
+    
+
+
+<div class="article-metadata">
+
+  
+  
+  
+  
+  <div>
+    
+
+
+
+  
+  <span><a href="/authors/austin-baird/">Austin Baird</a></span>
+
+  </div>
+  
+  
+
+  
+  <span class="article-date">
+    
+    
+      
+    
+    Apr 26, 2020
+  </span>
+  
+
+  
+
+  
+  <span class="middot-divider"></span>
+  <span class="article-reading-time">
+    7 min read
+  </span>
+  
+
+  
+  
+  
+  <span class="middot-divider"></span>
+  <a href="/post/firsthowto/#disqus_thread"></a>
+  
+
+  
+  
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/project/biogears/">
+    Project
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
+    <div class="article-style">
+      <h1 id="leveraging-biogears-libraries-to-write-your-own-howto">Leveraging BioGears libraries to write your own HowTo</h1>
+<p>We have BioGears built and ready to go but the question is, now what? What can we do with BioGears, how powerful is it and what type of applications can be build with it? These are some of the questions we will address in this tutorial on developing your own application leveraging BioGears API tools in C++. In this tutorial you will learn to:</p>
+<ul>
+<li>Create a fork of your BioGears project</li>
+<li>Create a new howto project and verify CMAKE configs</li>
+<li>Modify the hemorrhage existing howto to include vasopressin and fluid administration</li>
+<li>Use the command line to log vitals and administer treatments to the patient</li>
+<li>Get an overview of data requests and their structure</li>
+</ul>
+<h2 id="running-a-howto-file">Running a HowTo file</h2>
+<p>To start lets first just verify that we can, in fact, run one of the many HowTo files provided by BioGears when we clone the repository. If you followed, the first post on this site you should have built BioGears as well as all the HowTos. If you didn't complete that please refer back this that 
+<a href="https://austinbaird.dev/post/buildingbiogears/" target="_blank" rel="noopener">post</a>. To run a HowTo file simply execute the binaries in the proper directory. In this example I'm going to be running the HowToHemorrhage file. This will give the patient a hemorrhage located in the spleen, at a rate of 150 ml/min. The below image shows you what the command will be.</p>
+<p><img src="./runHem.png" alt="png"></p>
+<p>because I'm using xcode as my development environment, I'll be executing the code from the runtime directory generated by xcode, located in the buildxcode folder. Once the how to is running you should see the following being logged in your command window.</p>
+<p><img src="./patientRun.png" alt="png"></p>
+<p>If there are no errors on the console output, then chances are everything ran correctly but just to double check. Since we ran the howto from the runtime directory, the data should be located in that same directory. Verify that a HowToHemorrhage.csv and HowToHemorrhage.log both were generated in runtime (there are a LOT of files in runtime so sorry in advance for making you track it down). The .csv file holds all of the data request data printed each time step (or whenever the user specifies) and the .log file holds all the information that was printed to the terminal.</p>
+<h2 id="creating-a-new-howto-project">Creating a new HowTo project</h2>
+<p>Now if BioGears is cloned from github, we will now need to set our remote to a fork of the repository so that all the code we push is our own. Once we are happy with what we've created then you can always push back changes to be integrated into the master branch of core. To do this, reference this 
+<a href="https://gist.github.com/jagregory/710671" target="_blank" rel="noopener">link</a>. Once completed if you type <code>git remote -v</code> you should see your origin set to your fork branch and upstream is still set to the BioGears core repository. Now we you can rebase origin off the upstream repository in the future and submit pull requests back to upstream!</p>
+<p>First step to creating a new project is to just copy the hemorrhage folder under <code>core/projects/howto/hemorrhage</code> This will pull all the existing files that we just ran and will be the basis for the work that we want to do. To update the projects list in Xcode we need to re-configure and generate the project using CMAKE. The image below shows our new howto project titled hemorrhagetreatment. Generally, these projects are laid out as a main file that runs routines, you can see this structure of the project if you look at the files included from the hemorrhage howto.</p>
+<p><img src="./configuration.png" alt="png"></p>
+<h2 id="creating-a-patient-vitals-logger">Creating a patient vitals logger</h2>
+<p>Ultimately, we want to create a command line tool that lets us:</p>
+<ul>
+<li>display patient vitals</li>
+<li>give treatment to the patient</li>
+<li>alert us to any patient events that may occur</li>
+</ul>
+<p>To do this we will start with baby steps, first lets just make a program that lets us configure the patient bleed rate and location and displays patient vitals every 10 seconds. To begin, lets lean on the dynamic sepsis and hemorrhage how tos. We start with creating the BioGears engine an loading in the patient state file:</p>
+<pre><code class="language-c++">void HowToHemorrhageTreatment()
+{
+   // Create the engine and load the patient
+  std::unique_ptr&lt;PhysiologyEngine&gt; bg = CreateBioGearsEngine(&quot;HowToHemorrhageTreatment.log&quot;);
+  bg-&gt;GetLogger()-&gt;Info(&quot;HowToHemorrhageTreatment&quot;);
+  bool simulation = true;
+    
+// Load patient
+  if (!bg-&gt;LoadState(&quot;./states/StandardMale@0s.xml&quot;)) {
+    bg-&gt;GetLogger()-&gt;Error(&quot;Could not load state, check the error&quot;);
+    return;
+  }
+</code></pre>
+<p>Then we need to set all the data requests that we want to be logged to our .csv file we will create:</p>
+<pre><code class="language-c++">  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;HeartRate&quot;, FrequencyUnit::Per_min);
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;BloodVolume&quot;, VolumeUnit::mL);
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;CardiacOutput&quot;, VolumePerTimeUnit::mL_Per_min);
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;MeanArterialPressure&quot;, PressureUnit::mmHg);
+
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().SetResultsFilename(&quot;HowToHemorrhageTreatment.csv&quot;);
+</code></pre>
+<p>For this application we will just be concerned with cardiovascular system outputs such as cardiac output and mean arterial pressure. See other how tos and scenarios for more examples of the types of data requests we may configure.</p>
+<p>No we will set up a simple cin to store the location and rate of the hemorrhage, in the example below we are restricting the user to a select number of locations and fixed units for the bleed rate. Fancier applications may want to expand these options. BioGears has a generic unit conversion engine built in and the supports numerous hemorrhage locations.</p>
+<pre><code class="language-c++">  std::string hemorrageLocation;
+  int hemorrageRate;
+
+  std::cout &lt;&lt; &quot;Please type the location of the hemorrhage as: leftleg, spleen, or aorta. Followed by the rate of the bleed (assuming units of mL/min), ex. leftleg 150 &quot; &lt;&lt; std::endl;
+  std::cin &gt;&gt; hemorrageLocation &gt;&gt; hemorrageRate;
+  //Process update to hemorrhage action
+  hem.SetCompartment(hemorrageLocation);
+  bg-&gt;ProcessAction(hem);
+</code></pre>
+<p>Now we will initialize some parameters we will use in this simulation, here we will create objects for vasopressin and saline and a few other variables used in the do case:</p>
+<pre><code class="language-c++">  int action;
+  bool simulation = true;
+  double rate;
+  double concentration;
+  SESubstance* vas = bg-&gt;GetSubstanceManager().GetSubstance(&quot;Vasopressin&quot;);
+  SESubstanceBolus bolus(*vas);
+  SESubstanceCompound* saline = bg-&gt;GetSubstanceManager().GetCompound(&quot;Saline&quot;);
+  SESubstanceCompoundInfusion* salineInfusion = new SESubstanceCompoundInfusion(*saline);
+  salineInfusion-&gt;GetBagVolume().SetValue(500, VolumeUnit::mL);
+</code></pre>
+<p>Now lets log some information to the command line for the user to interact with. We want to let them administer saline, administer a tourniquet, vasopressin, advance time for a few minutes, or log patient information, we will construct this tool as a do loop to continue logging:</p>
+<pre><code class="language-c++">  do {
+    bg-&gt;GetLogger()-&gt;Info(&quot;Enter Integer for Action to Perform : \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin \n\t[5] Quit \n&quot;);
+    std::cin &gt;&gt; action;
+</code></pre>
+<p>Now this next block of code will enact actions that are initialized by the user, each case will correspond to a different action we want to allow the user to push to BioGears during runtime:</p>
+<pre><code class="language-c++">do {
+    bg-&gt;AdvanceModelTime(1.0, TimeUnit::s);
+    bg-&gt;GetEngineTrack()-&gt;TrackData(bg-&gt;GetSimulationTime(TimeUnit::s));
+    bg-&gt;GetLogger()-&gt;Info(&quot;Enter Integer for Action to Perform : \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin \n\t[5] Advance time 2 min \n\t[6] Quit \n&quot;);
+    std::cin &gt;&gt; action;
+    switch (action) {
+    case 1:
+      bg-&gt;GetLogger()-&gt;Info(&quot;&quot;);
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Simulation Time  : &quot; &lt;&lt; bg-&gt;GetSimulationTime(TimeUnit::min) &lt;&lt; &quot;min&quot;);
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Blood Volume : &quot; &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetBloodVolume(VolumeUnit::mL) &lt;&lt; VolumeUnit::mL);
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Mean Arterial Pressure : &quot; &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetMeanArterialPressure(PressureUnit::mmHg) &lt;&lt; PressureUnit::mmHg);
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Heart Rate : &quot; &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetHeartRate(FrequencyUnit::Per_min) &lt;&lt; &quot;bpm&quot;);
+      break;
+    case 2:
+      bg-&gt;GetLogger()-&gt;Info(&quot;Enter IV Fluids Rate in mL/min (bag volume is 500 mL), followed by ENTER : &quot;);
+      std::cin &gt;&gt; rate;
+      saline-&gt;GetRate().SetValue(rate, VolumePerTimeUnit::mL_Per_min);
+      bg-&gt;ProcessAction(*saline);
+      break;
+    case 3:
+      bg-&gt;GetLogger()-&gt;Info(&quot;Administering tourniquet&quot;);
+      hem.GetInitialRate().SetValue(0, VolumePerTimeUnit::mL_Per_min);
+      break;
+    case 4:
+      bg-&gt;GetLogger()-&gt;Info(&quot;Enter a concentration in ug/mL (will be delivered by a 10 mL push intravesnously), followed by ENTER : &quot;);
+      std::cin &gt;&gt; concentration;
+      bolus.GetConcentration().SetValue(concentration, MassPerVolumeUnit::ug_Per_mL);
+      bolus.GetDose().SetValue(10, VolumeUnit::mL);
+      bolus.SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
+      break;
+    case 5:
+      bg-&gt;AdvanceModelTime(2.0, TimeUnit::min);
+      bg-&gt;GetEngineTrack()-&gt;TrackData(bg-&gt;GetSimulationTime(TimeUnit::s));
+      break;
+    case 6:
+      simulation = false;
+      break;
+      }
+    } while(simulation);
+  
+  bg-&gt;GetLogger()-&gt;Info(&quot;Finished&quot;);
+
+</code></pre>
+<p>If it is running correctly your console screen should look the like this</p>
+<p><img src="./consol.png" alt="png"></p>
+<p>To confirm that the simulation ran and logged the appropriate data, navigate to the runtime directory and make sure that the HowtoHemorrhageTreatment.log and HowtoHemorrhageTreatment.csv file are present. You can then use your favorite data analysis tool to plot the results you are interested in.</p>
+<p>To see the full set of code developed for this tutorial, please see the 
+<a href="https://github.com/ajbaird/core/tree/masterFork/projects/howto/HemorrhageTreatment/src" target="_blank" rel="noopener">github page</a></p>
+<p>If you have other issues feel free to post a comment on the community pages (
+<a href="https://github.com/BioGearsEngine/core/issues" target="_blank" rel="noopener">link</a>)!</p>
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/firsthowto/&amp;text=Hemorrhage%20Treatment%20HowTo" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/firsthowto/&amp;t=Hemorrhage%20Treatment%20HowTo" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Hemorrhage%20Treatment%20HowTo&amp;body=/post/firsthowto/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/firsthowto/&amp;title=Hemorrhage%20Treatment%20HowTo" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Hemorrhage%20Treatment%20HowTo%20/post/firsthowto/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/firsthowto/&amp;title=Hemorrhage%20Treatment%20HowTo" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/authors/austin-baird/"></a></h5>
+      
+      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
+    </div>
+  </div>
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "austinbaird-dev" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+  
+  
+
+
+
+  </div>
+</article>
+
+      
+
+    
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.4/imagesloaded.pkgd.min.js" integrity="sha256-lqvxZrPLtfffUl2G/e7szqSvPBILGbwmsGE1MKlOi0Q=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+
+      
+
+      
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js" integrity="sha256-1zu+3BnLYV9LdiY85uXMzii3bdrkelyp37e0ZyTAQh0=" crossorigin="anonymous"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/languages/r.min.js"></script>
+        
+      
+
+    
+
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js" integrity="sha256-EErZamuLefUnbMBQbsEqu1USa+btR2oIlCpBJbyD4/g=" crossorigin="anonymous"></script>
+    
+
+    
+    
+    <script>const code_highlighting = true;</script>
+    
+
+    
+    
+    <script>const isSiteThemeDark = false;</script>
+    
+
+    
+
+    
+    
+
+    
+
+    
+    
+
+    
+    
+
+    
+    
+    <script id="dsq-count-scr" src="https://austinbaird-dev.disqus.com/count.js" async></script>
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="/js/academic.min.c97b94000ee75a76d9bc08f5a2e44814.js"></script>
+
+    
+
+
+
+
+
+
+  
+  
+  <div class="container">
+    <footer class="site-footer">
+  
+
+  <p class="powered-by">
+    
+
+    Powered by the
+    <a href="https://sourcethemes.com/academic/" target="_blank" rel="noopener">Academic theme</a> for
+    <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>.
+
+    
+    <span class="float-right" aria-hidden="true">
+      <a href="#" class="back-to-top">
+        <span class="button_icon">
+          <i class="fas fa-chevron-up fa-2x"></i>
+        </span>
+      </a>
+    </span>
+    
+  </p>
+</footer>
+
+  </div>
+  
+
+  
+<div id="modal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cite</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <pre><code class="tex hljs"></code></pre>
+      </div>
+      <div class="modal-footer">
+        <a class="btn btn-outline-primary my-1 js-copy-cite" href="#" target="_blank">
+          <i class="fas fa-copy"></i> Copy
+        </a>
+        <a class="btn btn-outline-primary my-1 js-download-cite" href="#" target="_blank">
+          <i class="fas fa-download"></i> Download
+        </a>
+        <div id="modal-error"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

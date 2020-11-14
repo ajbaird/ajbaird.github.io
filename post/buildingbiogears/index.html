@@ -535,7 +535,7 @@ Cloning and Building To begin create a suitable directory where you&#39;d like t
   <h1>Building and running BioGears on a MacOS</h1>
 
   
-  <p class="page-subtitle">We will go a mac build step by step and run a scenario file</p>
+  <p class="page-subtitle">We will complete a mac build step by step and run a scenario file</p>
   
 
   
@@ -575,7 +575,7 @@ Cloning and Building To begin create a suitable directory where you&#39;d like t
   
   <span class="middot-divider"></span>
   <span class="article-reading-time">
-    4 min read
+    5 min read
   </span>
   
 
@@ -689,6 +689,10 @@ To fix this issue back out to the top directory, for me this will be Core. From 
 <p><img src="./cmake1.png" alt="png"></p>
 <p>After you configure the where the source code is and where the build files will be generated (top two lines) as seen in the image. Click the configure button and select Xcode from the generators list that will pop up. There should be no errors, if there are you might need to re-install some of the binaries. Next, click generate, there will be some red text but this step should still finish. Next, click open project and the project should be launched in Xcode. In the next image you can see the folder structure and the Cardiovascular.cpp file which houses all models associated with BioGears cardiovascular system.</p>
 <p><img src="./xcodeProj.png" alt="png"></p>
+<p>You might want to be able to build BioGears targets through the XCode UI. In that case simply configure a scheme. For this example click the scheme button in the top left page, the in the drop down select ALL_BUILD. This will build all the CMAKE targets that are defined. This is good if you want to begin to reference the HowTo files to start making your own application with BioGears! Once the scheme is configured just hit the play button to begin building the ALL_BUILD target. NOTE: there will be a LOT of warnings, but there shouldn't be any errors.</p>
+<p><img src="./xcodeBuild.png" alt="png"></p>
+<p>To confirm that the build worked, there should be a newly generated buildxcode folder that was generated (this is different from the one that we had cmake generate, mostly to differentiate between the two build systems). From there confirm that <code>buildxcode/runtime</code> folder. This folder houses all the extra files that are needed for BioGears to run! Confirm that there is a bunch of stuff in this folder (mostly .xml and .config files). Then we can confirm that some of our other projects built, specifically we want to confirm that the HowTo files compiled. Navigate to the where all built binaries are stored. For me, building debug targets, they are located in <code>/Users/abaird/Development/BioGears/Core/core/buildxcode/outputs/Debug/bin</code>. Your bin should look like below for reference:</p>
+<p><img src="./bin.png" alt="png"></p>
 <p>If you have other issues while building, feel free to post a comment on the community pages (
 <a href="https://github.com/BioGearsEngine/core/issues" target="_blank" rel="noopener">link</a>)!</p>
 

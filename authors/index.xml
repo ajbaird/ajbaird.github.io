@@ -5,12 +5,78 @@
     <link>/authors/</link>
       <atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
     <description>Authors</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sun, 26 Apr 2020 20:00:32 -0400</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_512x512_fill_lanczos_center_2.png</url>
       <title>Authors</title>
       <link>/authors/</link>
     </image>
+    
+    <item>
+      <title></title>
+      <link>/authors/admin/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/admin/</guid>
+      <description>&lt;p&gt;My research focuses on mathematical modeling of biological systems, specifically fluid-structure interaction, mathematical models in physiology, and dynamical system applications. At ARA, I am the principal investigator of the BioGears project, the Virtual Patient (BurnCare) project, and the BioGears follow-on effort.&lt;/p&gt;
+&lt;p&gt;My doctoral work focused on fully coupled fluid-structure interactions in modeling the invertebrate valveless tubular heart and the integration of a cardiac muscle cell model. I spent a year at Duke University as a visiting professor studying re-absorption mechanisms of the kidney and blood cell  aggregation and  de-aggregation in  the  capillaries due to peristaltic  pumping  mechanisms.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Alicia Williams</title>
+      <link>/authors/alicia-williams/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/alicia-williams/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bradly Wilson</title>
+      <link>/authors/bradly-wilson/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/bradly-wilson/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Marcia Clover</title>
+      <link>/authors/marcia-clover/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/marcia-clover/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Maria Serio-Melvin</title>
+      <link>/authors/maria-serio-melvin/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/maria-serio-melvin/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matthew Hackett</title>
+      <link>/authors/matthew-hackett/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/matthew-hackett/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matthew McDaniel</title>
+      <link>/authors/matthew-mcdaniel/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/matthew-mcdaniel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Michael Rowland</title>
+      <link>/authors/michael-rowland/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/authors/michael-rowland/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Austin Baird</title>
@@ -18,16 +84,6 @@
       <pubDate>Sun, 26 Apr 2020 20:00:32 -0400</pubDate>
       <guid>/authors/austin-baird/</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>/authors/admin/</link>
-      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/admin/</guid>
-      <description>&lt;p&gt;My research focuses on mathematical modeling of biological systems, specifically fluid-structure interaction, mathematical models in physiology, and dynamical system applications. At ARA, I am the principal investigator of the BioGears project, the Virtual Patient (BurnCare) project, and the BioGears follow-on effort.&lt;/p&gt;
-&lt;p&gt;My doctoral work focused on fully coupled fluid-structure interactions in modeling the invertebrate valveless tubular heart and the integration of a cardiac muscle cell model. I spent a year at Duke University as a visiting professor studying re-absorption mechanisms of the kidney and blood cell  aggregation and  de-aggregation in  the  capillaries due to peristaltic  pumping  mechanisms.&lt;/p&gt;
-</description>
     </item>
     
     <item>
@@ -43,14 +99,6 @@
       <link>/authors/laura-a.-miller/</link>
       <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
       <guid>/authors/laura-a.-miller/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Matthew McDaniel</title>
-      <link>/authors/matthew-mcdaniel/</link>
-      <pubDate>Sat, 19 Oct 2019 00:00:00 +0000</pubDate>
-      <guid>/authors/matthew-mcdaniel/</guid>
       <description></description>
     </item>
     

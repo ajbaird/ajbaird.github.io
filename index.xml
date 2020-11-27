@@ -7,7 +7,7 @@
     <description>Austin Baird</description>
     <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Sat, 01 Jun 2030 13:00:00 +0000</lastBuildDate>
     <image>
-      <url>/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png</url>
+      <url>/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_512x512_fill_lanczos_center_2.png</url>
       <title>Austin Baird</title>
       <link>/</link>
     </image>
@@ -74,6 +74,14 @@
 &lt;/ul&gt;
 &lt;p&gt;Further talk details can easily be added to this page using &lt;em&gt;Markdown&lt;/em&gt; and $\rm \LaTeX$ math code.&lt;/p&gt;
 </description>
+    </item>
+    
+    <item>
+      <title>BurnCare tablet trainer to enhance burn injury care and treatment</title>
+      <link>/publication/burntablet/</link>
+      <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>/publication/burntablet/</guid>
+      <description></description>
     </item>
     
     <item>
@@ -163,7 +171,8 @@ To fix this issue back out to the top directory, for me this will be Core. From 
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;void HowToHemorrhageTreatment()
 {
    // Create the engine and load the patient
-  std::unique_ptr&amp;lt;PhysiologyEngine&amp;gt; bg = CreateBioGearsEngine(&amp;quot;HowToHemorrhageTreatment.log&amp;quot;);
+  std::unique_ptr&amp;lt;PhysiologyEngine&amp;gt; bg = 
+          CreateBioGearsEngine(&amp;quot;HowToHemorrhageTreatment.log&amp;quot;);
   bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;HowToHemorrhageTreatment&amp;quot;);
   bool simulation = true;
     
@@ -174,19 +183,26 @@ To fix this issue back out to the top directory, for me this will be Core. From 
   }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Then we need to set all the data requests that we want to be logged to our .csv file we will create:&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&amp;quot;HeartRate&amp;quot;, FrequencyUnit::Per_min);
-  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&amp;quot;BloodVolume&amp;quot;, VolumeUnit::mL);
-  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&amp;quot;CardiacOutput&amp;quot;, VolumePerTimeUnit::mL_Per_min);
-  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&amp;quot;MeanArterialPressure&amp;quot;, PressureUnit::mmHg);
+&lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&amp;quot;HeartRate&amp;quot;, FrequencyUnit::Per_min);
+  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&amp;quot;BloodVolume&amp;quot;, VolumeUnit::mL);
+  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&amp;quot;CardiacOutput&amp;quot;, VolumePerTimeUnit::mL_Per_min);
+  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&amp;quot;MeanArterialPressure&amp;quot;, PressureUnit::mmHg);
 
-  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().SetResultsFilename(&amp;quot;HowToHemorrhageTreatment.csv&amp;quot;);
+  bg-&amp;gt;GetEngineTrack()-&amp;gt;GetDataRequestManager().
+  SetResultsFilename(&amp;quot;HowToHemorrhageTreatment.csv&amp;quot;);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;For this application we will just be concerned with cardiovascular system outputs such as cardiac output and mean arterial pressure. See other how tos and scenarios for more examples of the types of data requests we may configure.&lt;/p&gt;
 &lt;p&gt;No we will set up a simple cin to store the location and rate of the hemorrhage, in the example below we are restricting the user to a select number of locations and fixed units for the bleed rate. Fancier applications may want to expand these options. BioGears has a generic unit conversion engine built in and the supports numerous hemorrhage locations.&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;  std::string hemorrageLocation;
   int hemorrageRate;
 
-  std::cout &amp;lt;&amp;lt; &amp;quot;Please type the location of the hemorrhage as: leftleg, spleen, or aorta. Followed by the rate of the bleed (assuming units of mL/min), ex. leftleg 150 &amp;quot; &amp;lt;&amp;lt; std::endl;
+  std::cout &amp;lt;&amp;lt; &amp;quot;Please type the location of the hemorrhage as: leftleg, spleen, 
+  or aorta. Followed by the rate of the bleed (assuming units of mL/min), 
+  ex. leftleg 150 &amp;quot; &amp;lt;&amp;lt; std::endl;
   std::cin &amp;gt;&amp;gt; hemorrageLocation &amp;gt;&amp;gt; hemorrageRate;
   //Process update to hemorrhage action
   hem.SetCompartment(hemorrageLocation);
@@ -200,30 +216,43 @@ To fix this issue back out to the top directory, for me this will be Core. From 
   SESubstance* vas = bg-&amp;gt;GetSubstanceManager().GetSubstance(&amp;quot;Vasopressin&amp;quot;);
   SESubstanceBolus bolus(*vas);
   SESubstanceCompound* saline = bg-&amp;gt;GetSubstanceManager().GetCompound(&amp;quot;Saline&amp;quot;);
-  SESubstanceCompoundInfusion* salineInfusion = new SESubstanceCompoundInfusion(*saline);
+  SESubstanceCompoundInfusion* salineInfusion = 
+          new SESubstanceCompoundInfusion(*saline);
   salineInfusion-&amp;gt;GetBagVolume().SetValue(500, VolumeUnit::mL);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now lets log some information to the command line for the user to interact with. We want to let them administer saline, administer a tourniquet, vasopressin, advance time for a few minutes, or log patient information, we will construct this tool as a do loop to continue logging:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;  do {
-    bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter Integer for Action to Perform : \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin \n\t[5] Quit \n&amp;quot;);
+    bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter Integer for Action to Perform : 
+    \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet 
+    \n\t[4] Vasopressin Admin \n\t[5] Quit \n&amp;quot;);
     std::cin &amp;gt;&amp;gt; action;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Now this next block of code will enact actions that are initialized by the user, each case will correspond to a different action we want to allow the user to push to BioGears during runtime:&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-c++&#34;&gt;do {
     bg-&amp;gt;AdvanceModelTime(1.0, TimeUnit::s);
     bg-&amp;gt;GetEngineTrack()-&amp;gt;TrackData(bg-&amp;gt;GetSimulationTime(TimeUnit::s));
-    bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter Integer for Action to Perform : \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin \n\t[5] Advance time 2 min \n\t[6] Quit \n&amp;quot;);
+    bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter Integer for Action to Perform : \n\t[1] Status 
+    \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin 
+    \n\t[5] Advance time 2 min \n\t[6] Quit \n&amp;quot;);
     std::cin &amp;gt;&amp;gt; action;
     switch (action) {
     case 1:
       bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;&amp;quot;);
-      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Simulation Time  : &amp;quot; &amp;lt;&amp;lt; bg-&amp;gt;GetSimulationTime(TimeUnit::min) &amp;lt;&amp;lt; &amp;quot;min&amp;quot;);
-      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Blood Volume : &amp;quot; &amp;lt;&amp;lt; bg-&amp;gt;GetCardiovascularSystem()-&amp;gt;GetBloodVolume(VolumeUnit::mL) &amp;lt;&amp;lt; VolumeUnit::mL);
-      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Mean Arterial Pressure : &amp;quot; &amp;lt;&amp;lt; bg-&amp;gt;GetCardiovascularSystem()-&amp;gt;GetMeanArterialPressure(PressureUnit::mmHg) &amp;lt;&amp;lt; PressureUnit::mmHg);
-      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Heart Rate : &amp;quot; &amp;lt;&amp;lt; bg-&amp;gt;GetCardiovascularSystem()-&amp;gt;GetHeartRate(FrequencyUnit::Per_min) &amp;lt;&amp;lt; &amp;quot;bpm&amp;quot;);
+      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Simulation Time  : &amp;quot; 
+      &amp;lt;&amp;lt; bg-&amp;gt;GetSimulationTime(TimeUnit::min) &amp;lt;&amp;lt; &amp;quot;min&amp;quot;);
+      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Blood Volume : &amp;quot; 
+      &amp;lt;&amp;lt; bg-&amp;gt;GetCardiovascularSystem()-&amp;gt;GetBloodVolume(VolumeUnit::mL) 
+      &amp;lt;&amp;lt; &amp;quot;mL&amp;quot;;
+      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Mean Arterial Pressure : &amp;quot; 
+      &amp;lt;&amp;lt; bg-&amp;gt;GetCardiovascularSystem()-&amp;gt;
+      GetMeanArterialPressure(PressureUnit::mmHg) &amp;lt;&amp;lt; &amp;quot;mmHg&amp;quot;;
+      bg-&amp;gt;GetLogger()-&amp;gt;Info(std::stringstream() &amp;lt;&amp;lt; &amp;quot;Heart Rate : &amp;quot; 
+      &amp;lt;&amp;lt; bg-&amp;gt;GetCardiovascularSystem()-&amp;gt;GetHeartRate(FrequencyUnit::Per_min) 
+      &amp;lt;&amp;lt; &amp;quot;bpm&amp;quot;);
       break;
     case 2:
-      bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter IV Fluids Rate in mL/min (bag volume is 500 mL), followed by ENTER : &amp;quot;);
+      bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter IV Fluids Rate in mL/min 
+      (bag volume is 500 mL), followed by ENTER : &amp;quot;);
       std::cin &amp;gt;&amp;gt; rate;
       saline-&amp;gt;GetRate().SetValue(rate, VolumePerTimeUnit::mL_Per_min);
       bg-&amp;gt;ProcessAction(*saline);
@@ -233,9 +262,11 @@ To fix this issue back out to the top directory, for me this will be Core. From 
       hem.GetInitialRate().SetValue(0, VolumePerTimeUnit::mL_Per_min);
       break;
     case 4:
-      bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter a concentration in ug/mL (will be delivered by a 10 mL push intravesnously), followed by ENTER : &amp;quot;);
+      bg-&amp;gt;GetLogger()-&amp;gt;Info(&amp;quot;Enter a concentration in ug/mL 
+      (will be delivered by a 10 mL push intravesnously), followed by ENTER : &amp;quot;);
       std::cin &amp;gt;&amp;gt; concentration;
-      bolus.GetConcentration().SetValue(concentration, MassPerVolumeUnit::ug_Per_mL);
+      bolus.GetConcentration().SetValue(concentration, 
+      MassPerVolumeUnit::ug_Per_mL);
       bolus.GetDose().SetValue(10, VolumeUnit::mL);
       bolus.SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
       break;

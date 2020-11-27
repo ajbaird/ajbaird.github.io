@@ -39,7 +39,7 @@
   
   
   
-  <meta name="theme-color" content="#3f51b5">
+  <meta name="theme-color" content="hsl(339, 90%, 68%)">
   
 
   
@@ -210,8 +210,8 @@
   
 
   <link rel="manifest" href="/index.webmanifest">
-  <link rel="icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_32x32_fill_lanczos_center_2.png">
-  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png">
+  <link rel="icon" type="image/png" href="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_32x32_fill_lanczos_center_2.png">
+  <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_192x192_fill_lanczos_center_2.png">
 
   <link rel="canonical" href="/post/firsthowto/">
 
@@ -229,8 +229,8 @@
   <meta property="og:site_name" content="Austin Baird">
   <meta property="og:url" content="/post/firsthowto/">
   <meta property="og:title" content="Hemorrhage Treatment HowTo | Austin Baird">
-  <meta property="og:description" content="Leveraging BioGears libraries to write your own HowTo We have BioGears built and ready to go but the question is, now what? What can we do with BioGears, how powerful is it and what type of applications can be build with it? These are some of the questions we will address in this tutorial on developing your own application leveraging BioGears API tools in C&#43;&#43;. In this tutorial you will learn to:"><meta property="og:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png">
-  <meta property="twitter:image" content="/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
+  <meta property="og:description" content="Leveraging BioGears libraries to write your own HowTo We have BioGears built and ready to go but the question is, now what? What can we do with BioGears, how powerful is it and what type of applications can be build with it? These are some of the questions we will address in this tutorial on developing your own application leveraging BioGears API tools in C&#43;&#43;. In this tutorial you will learn to:"><meta property="og:image" content="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
       <meta property="article:published_time" content="2020-04-26T20:00:32-04:00">
@@ -276,7 +276,7 @@
     "name": "Austin Baird",
     "logo": {
       "@type": "ImageObject",
-      "url": "/images/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_2.png"
+      "url": "/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_192x192_fill_lanczos_center_2.png"
     }
   },
   "description": "Leveraging BioGears libraries to write your own HowTo We have BioGears built and ready to go but the question is, now what? What can we do with BioGears, how powerful is it and what type of applications can be build with it? These are some of the questions we will address in this tutorial on developing your own application leveraging BioGears API tools in C++. In this tutorial you will learn to:"
@@ -301,7 +301,7 @@
 
 </head>
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" >
+<body id="top" data-spy="scroll" data-offset="70" data-target="#TableOfContents" class="dark">
 
   <aside class="search-results" id="search">
   <div class="container">
@@ -683,7 +683,8 @@
 <pre><code class="language-c++">void HowToHemorrhageTreatment()
 {
    // Create the engine and load the patient
-  std::unique_ptr&lt;PhysiologyEngine&gt; bg = CreateBioGearsEngine(&quot;HowToHemorrhageTreatment.log&quot;);
+  std::unique_ptr&lt;PhysiologyEngine&gt; bg = 
+          CreateBioGearsEngine(&quot;HowToHemorrhageTreatment.log&quot;);
   bg-&gt;GetLogger()-&gt;Info(&quot;HowToHemorrhageTreatment&quot;);
   bool simulation = true;
     
@@ -694,19 +695,26 @@
   }
 </code></pre>
 <p>Then we need to set all the data requests that we want to be logged to our .csv file we will create:</p>
-<pre><code class="language-c++">  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;HeartRate&quot;, FrequencyUnit::Per_min);
-  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;BloodVolume&quot;, VolumeUnit::mL);
-  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;CardiacOutput&quot;, VolumePerTimeUnit::mL_Per_min);
-  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().Set(&quot;MeanArterialPressure&quot;, PressureUnit::mmHg);
+<pre><code class="language-c++">  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&quot;HeartRate&quot;, FrequencyUnit::Per_min);
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&quot;BloodVolume&quot;, VolumeUnit::mL);
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&quot;CardiacOutput&quot;, VolumePerTimeUnit::mL_Per_min);
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().CreatePhysiologyDataRequest().
+  Set(&quot;MeanArterialPressure&quot;, PressureUnit::mmHg);
 
-  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().SetResultsFilename(&quot;HowToHemorrhageTreatment.csv&quot;);
+  bg-&gt;GetEngineTrack()-&gt;GetDataRequestManager().
+  SetResultsFilename(&quot;HowToHemorrhageTreatment.csv&quot;);
 </code></pre>
 <p>For this application we will just be concerned with cardiovascular system outputs such as cardiac output and mean arterial pressure. See other how tos and scenarios for more examples of the types of data requests we may configure.</p>
 <p>No we will set up a simple cin to store the location and rate of the hemorrhage, in the example below we are restricting the user to a select number of locations and fixed units for the bleed rate. Fancier applications may want to expand these options. BioGears has a generic unit conversion engine built in and the supports numerous hemorrhage locations.</p>
 <pre><code class="language-c++">  std::string hemorrageLocation;
   int hemorrageRate;
 
-  std::cout &lt;&lt; &quot;Please type the location of the hemorrhage as: leftleg, spleen, or aorta. Followed by the rate of the bleed (assuming units of mL/min), ex. leftleg 150 &quot; &lt;&lt; std::endl;
+  std::cout &lt;&lt; &quot;Please type the location of the hemorrhage as: leftleg, spleen, 
+  or aorta. Followed by the rate of the bleed (assuming units of mL/min), 
+  ex. leftleg 150 &quot; &lt;&lt; std::endl;
   std::cin &gt;&gt; hemorrageLocation &gt;&gt; hemorrageRate;
   //Process update to hemorrhage action
   hem.SetCompartment(hemorrageLocation);
@@ -720,30 +728,43 @@
   SESubstance* vas = bg-&gt;GetSubstanceManager().GetSubstance(&quot;Vasopressin&quot;);
   SESubstanceBolus bolus(*vas);
   SESubstanceCompound* saline = bg-&gt;GetSubstanceManager().GetCompound(&quot;Saline&quot;);
-  SESubstanceCompoundInfusion* salineInfusion = new SESubstanceCompoundInfusion(*saline);
+  SESubstanceCompoundInfusion* salineInfusion = 
+          new SESubstanceCompoundInfusion(*saline);
   salineInfusion-&gt;GetBagVolume().SetValue(500, VolumeUnit::mL);
 </code></pre>
 <p>Now lets log some information to the command line for the user to interact with. We want to let them administer saline, administer a tourniquet, vasopressin, advance time for a few minutes, or log patient information, we will construct this tool as a do loop to continue logging:</p>
 <pre><code class="language-c++">  do {
-    bg-&gt;GetLogger()-&gt;Info(&quot;Enter Integer for Action to Perform : \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin \n\t[5] Quit \n&quot;);
+    bg-&gt;GetLogger()-&gt;Info(&quot;Enter Integer for Action to Perform : 
+    \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet 
+    \n\t[4] Vasopressin Admin \n\t[5] Quit \n&quot;);
     std::cin &gt;&gt; action;
 </code></pre>
 <p>Now this next block of code will enact actions that are initialized by the user, each case will correspond to a different action we want to allow the user to push to BioGears during runtime:</p>
 <pre><code class="language-c++">do {
     bg-&gt;AdvanceModelTime(1.0, TimeUnit::s);
     bg-&gt;GetEngineTrack()-&gt;TrackData(bg-&gt;GetSimulationTime(TimeUnit::s));
-    bg-&gt;GetLogger()-&gt;Info(&quot;Enter Integer for Action to Perform : \n\t[1] Status \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin \n\t[5] Advance time 2 min \n\t[6] Quit \n&quot;);
+    bg-&gt;GetLogger()-&gt;Info(&quot;Enter Integer for Action to Perform : \n\t[1] Status 
+    \n\t[2] IVFluids \n\t[3] tourniquet \n\t[4] Vasopressin Admin 
+    \n\t[5] Advance time 2 min \n\t[6] Quit \n&quot;);
     std::cin &gt;&gt; action;
     switch (action) {
     case 1:
       bg-&gt;GetLogger()-&gt;Info(&quot;&quot;);
-      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Simulation Time  : &quot; &lt;&lt; bg-&gt;GetSimulationTime(TimeUnit::min) &lt;&lt; &quot;min&quot;);
-      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Blood Volume : &quot; &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetBloodVolume(VolumeUnit::mL) &lt;&lt; VolumeUnit::mL);
-      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Mean Arterial Pressure : &quot; &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetMeanArterialPressure(PressureUnit::mmHg) &lt;&lt; PressureUnit::mmHg);
-      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Heart Rate : &quot; &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetHeartRate(FrequencyUnit::Per_min) &lt;&lt; &quot;bpm&quot;);
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Simulation Time  : &quot; 
+      &lt;&lt; bg-&gt;GetSimulationTime(TimeUnit::min) &lt;&lt; &quot;min&quot;);
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Blood Volume : &quot; 
+      &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetBloodVolume(VolumeUnit::mL) 
+      &lt;&lt; &quot;mL&quot;;
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Mean Arterial Pressure : &quot; 
+      &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;
+      GetMeanArterialPressure(PressureUnit::mmHg) &lt;&lt; &quot;mmHg&quot;;
+      bg-&gt;GetLogger()-&gt;Info(std::stringstream() &lt;&lt; &quot;Heart Rate : &quot; 
+      &lt;&lt; bg-&gt;GetCardiovascularSystem()-&gt;GetHeartRate(FrequencyUnit::Per_min) 
+      &lt;&lt; &quot;bpm&quot;);
       break;
     case 2:
-      bg-&gt;GetLogger()-&gt;Info(&quot;Enter IV Fluids Rate in mL/min (bag volume is 500 mL), followed by ENTER : &quot;);
+      bg-&gt;GetLogger()-&gt;Info(&quot;Enter IV Fluids Rate in mL/min 
+      (bag volume is 500 mL), followed by ENTER : &quot;);
       std::cin &gt;&gt; rate;
       saline-&gt;GetRate().SetValue(rate, VolumePerTimeUnit::mL_Per_min);
       bg-&gt;ProcessAction(*saline);
@@ -753,9 +774,11 @@
       hem.GetInitialRate().SetValue(0, VolumePerTimeUnit::mL_Per_min);
       break;
     case 4:
-      bg-&gt;GetLogger()-&gt;Info(&quot;Enter a concentration in ug/mL (will be delivered by a 10 mL push intravesnously), followed by ENTER : &quot;);
+      bg-&gt;GetLogger()-&gt;Info(&quot;Enter a concentration in ug/mL 
+      (will be delivered by a 10 mL push intravesnously), followed by ENTER : &quot;);
       std::cin &gt;&gt; concentration;
-      bolus.GetConcentration().SetValue(concentration, MassPerVolumeUnit::ug_Per_mL);
+      bolus.GetConcentration().SetValue(concentration, 
+      MassPerVolumeUnit::ug_Per_mL);
       bolus.GetDose().SetValue(10, VolumeUnit::mL);
       bolus.SetAdminRoute(CDM::enumBolusAdministration::Intravenous);
       break;
@@ -993,7 +1016,7 @@
 
     
     
-    <script>const isSiteThemeDark = false;</script>
+    <script>const isSiteThemeDark = true;</script>
     
 
     

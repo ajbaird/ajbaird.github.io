@@ -77,6 +77,14 @@
     </item>
     
     <item>
+      <title>BioGears, A C&#43;&#43; library for whole body physiology simulations</title>
+      <link>/publication/jossbiogears/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/jossbiogears/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>BurnCare tablet trainer to enhance burn injury care and treatment</title>
       <link>/publication/burntablet/</link>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
@@ -288,6 +296,33 @@ To fix this issue back out to the top directory, for me this will be Core. From 
 &lt;p&gt;To confirm that the simulation ran and logged the appropriate data, navigate to the runtime directory and make sure that the HowtoHemorrhageTreatment.log and HowtoHemorrhageTreatment.csv file are present. You can then use your favorite data analysis tool to plot the results you are interested in.&lt;/p&gt;
 &lt;p&gt;To see the full set of code developed for this tutorial, please see the 
 &lt;a href=&#34;https://github.com/ajbaird/core/tree/masterFork/projects/howto/HemorrhageTreatment/src&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github page&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If you have other issues feel free to post a comment on the community pages (
+&lt;a href=&#34;https://github.com/BioGearsEngine/core/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;)!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using Python to Create Plotting Animations</title>
+      <link>/post/pythonanimation/</link>
+      <pubDate>Sun, 26 Apr 2020 20:00:32 -0400</pubDate>
+      <guid>/post/pythonanimation/</guid>
+      <description>&lt;h1 id=&#34;using-matplotlib-animation-functionality-to-create-videos&#34;&gt;Using Matplotlib animation functionality to create videos&lt;/h1&gt;
+&lt;p&gt;As a little bit of an aside, I thought that I would detail a python script I wrote that takes in comma separated data (.csv files) to ouputs an mp4 movie of the data. This is useful if you&#39;d like to create an animated plot of your temporal data to highlight the progression or evolution of the plot over time. I find that this type of data presentation can, sometimes, be more compelling than just introducing a line plot. It is especially compelling when placed side-by-side with three dimensional data. I wrote this script to plot bifurcation data over sime while a three dimensional .vtk plot runs next to it. In this blog you will (hopefully):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Create a function that takes in command line arguments for your script&lt;/li&gt;
+&lt;li&gt;Use pythons OS library to check paths given by the user and generate output folders&lt;/li&gt;
+&lt;li&gt;Format graphs using matplotlib to create publication worthy output&lt;/li&gt;
+&lt;li&gt;Use the animation library to generate videos of your data&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;command-line-arguments&#34;&gt;Command Line Arguments&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;./runHem.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;check-paths-and-verify-data&#34;&gt;Check Paths and Verify Data&lt;/h2&gt;
+&lt;h2 id=&#34;formatting-graphs-using-matplotlib&#34;&gt;Formatting Graphs Using Matplotlib&lt;/h2&gt;
+&lt;h2 id=&#34;animating-the-data&#34;&gt;Animating the Data&lt;/h2&gt;
+&lt;p&gt;If it is running correctly your console screen should look the like this&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./consol.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;To see the full set of code developed for this tutorial, please see the 
+&lt;a href=&#34;https://github.com/ajbaird/TBISimulator/blob/master/animateData.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github page&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;If you have other issues feel free to post a comment on the community pages (
 &lt;a href=&#34;https://github.com/BioGearsEngine/core/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;)!&lt;/p&gt;
 </description>

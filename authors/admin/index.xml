@@ -5,12 +5,20 @@
     <link>/authors/admin/</link>
       <atom:link href="/authors/admin/index.xml" rel="self" type="application/rss+xml" />
     <description>Austin Baird</description>
-    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Fri, 30 Oct 2020 00:00:00 +0000</lastBuildDate>
+    <generator>Source Themes Academic (https://sourcethemes.com/academic/)</generator><language>en-us</language><lastBuildDate>Tue, 16 Mar 2021 00:00:00 +0000</lastBuildDate>
     <image>
       <url>/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_512x512_fill_lanczos_center_2.png</url>
       <title>Austin Baird</title>
       <link>/authors/admin/</link>
     </image>
+    
+    <item>
+      <title>BioGears, A C&#43;&#43; library for whole body physiology simulations</title>
+      <link>/publication/jossbiogears/</link>
+      <pubDate>Tue, 16 Mar 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/jossbiogears/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>BurnCare tablet trainer to enhance burn injury care and treatment</title>

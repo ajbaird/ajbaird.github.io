@@ -28,10 +28,12 @@
   
     
   
-  <meta name="description" content="BioGears is an open source, comprehensive, extensible human physiology engine released under the Apache 2.0 license that will drive medical education, research, and training technologies. BioGears enables accurate and consistent physiology simulation across the medical community. The engine can be used as a standalone application or integrated with simulators, sensor interfaces, and models of all fidelities.">
+  <meta name="description" content="BioGears UI on a Mac These instructions will mostly be taken from the following link.
+Cloning and Building Firs thing we want to do is fork the UI project link. Once you have it forked on your github page, navigate tot the repository and clone the repository into the directory structure of your choice. For this tutorial I&#39;ll be cloning the project into ~/Development/BioGears/.
+Once cloned we will go through building the GUI.">
 
   
-  <link rel="alternate" hreflang="en-us" href="/project/biogears/">
+  <link rel="alternate" hreflang="en-us" href="/post/buildingbiogearsui/">
 
   
 
@@ -213,7 +215,7 @@
   <link rel="icon" type="image/png" href="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_32x32_fill_lanczos_center_2.png">
   <link rel="apple-touch-icon" type="image/png" href="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_192x192_fill_lanczos_center_2.png">
 
-  <link rel="canonical" href="/project/biogears/">
+  <link rel="canonical" href="/post/buildingbiogearsui/">
 
   
   
@@ -221,20 +223,23 @@
   
   
     
+    
   
   
-  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:card" content="summary">
   
   <meta property="og:site_name" content="Austin Baird">
-  <meta property="og:url" content="/project/biogears/">
-  <meta property="og:title" content="BioGears | Austin Baird">
-  <meta property="og:description" content="BioGears is an open source, comprehensive, extensible human physiology engine released under the Apache 2.0 license that will drive medical education, research, and training technologies. BioGears enables accurate and consistent physiology simulation across the medical community. The engine can be used as a standalone application or integrated with simulators, sensor interfaces, and models of all fidelities."><meta property="og:image" content="/project/biogears/featured.png">
-  <meta property="twitter:image" content="/project/biogears/featured.png"><meta property="og:locale" content="en-us">
+  <meta property="og:url" content="/post/buildingbiogearsui/">
+  <meta property="og:title" content="Building and running the BioGears user interface on a MacOS | Austin Baird">
+  <meta property="og:description" content="BioGears UI on a Mac These instructions will mostly be taken from the following link.
+Cloning and Building Firs thing we want to do is fork the UI project link. Once you have it forked on your github page, navigate tot the repository and clone the repository into the directory structure of your choice. For this tutorial I&#39;ll be cloning the project into ~/Development/BioGears/.
+Once cloned we will go through building the GUI."><meta property="og:image" content="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_512x512_fill_lanczos_center_2.png">
+  <meta property="twitter:image" content="/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_512x512_fill_lanczos_center_2.png"><meta property="og:locale" content="en-us">
   
     
-      <meta property="article:published_time" content="2016-04-27T00:00:00&#43;00:00">
+      <meta property="article:published_time" content="2020-04-26T20:00:32-04:00">
     
-    <meta property="article:modified_time" content="2016-04-27T00:00:00&#43;00:00">
+    <meta property="article:modified_time" content="2020-04-26T20:00:32-04:00">
   
 
   
@@ -246,6 +251,8 @@
 
 
 
+
+  
 
 
 
@@ -253,19 +260,15 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
+  "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "/project/biogears/"
+    "@id": "/post/buildingbiogearsui/"
   },
-  "headline": "BioGears",
+  "headline": "Building and running the BioGears user interface on a MacOS",
   
-  "image": [
-    "/project/biogears/featured.png"
-  ],
-  
-  "datePublished": "2016-04-27T00:00:00Z",
-  "dateModified": "2016-04-27T00:00:00Z",
+  "datePublished": "2020-04-26T20:00:32-04:00",
+  "dateModified": "2020-04-26T20:00:32-04:00",
   
   "author": {
     "@type": "Person",
@@ -280,7 +283,7 @@
       "url": "/images/icon_hua6f7ce57f3518c16caa76578815b11e1_187136_192x192_fill_lanczos_center_2.png"
     }
   },
-  "description": "BioGears is an open source, comprehensive, extensible human physiology engine released under the Apache 2.0 license that will drive medical education, research, and training technologies. BioGears enables accurate and consistent physiology simulation across the medical community. The engine can be used as a standalone application or integrated with simulators, sensor interfaces, and models of all fidelities."
+  "description": "BioGears UI on a Mac These instructions will mostly be taken from the following link.\nCloning and Building Firs thing we want to do is fork the UI project link. Once you have it forked on your github page, navigate tot the repository and clone the repository into the directory structure of your choice. For this tutorial I'll be cloning the project into ~/Development/BioGears/.\nOnce cloned we will go through building the GUI."
 }
 </script>
 
@@ -298,7 +301,7 @@
 
 
 
-  <title>BioGears | Austin Baird</title>
+  <title>Building and running the BioGears user interface on a MacOS | Austin Baird</title>
 
 </head>
 
@@ -510,7 +513,7 @@
 </nav>
 
 
-  <article class="article article-project">
+  <article class="article">
 
   
 
@@ -525,503 +528,20 @@
 
 
 
-
-
-
-
-
-
-
+  
 
   
   
-
-
+  
 <div class="article-container pt-3">
-  <h1>BioGears</h1>
+  <h1>Building and running the BioGears user interface on a MacOS</h1>
 
   
-
+  <p class="page-subtitle">We will complete a mac build for the UI step by step and run a patient</p>
   
 
-
-<div class="article-metadata">
-
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Apr 27, 2016
-  </span>
-  
-
-  
-
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/project/biogears/#disqus_thread"></a>
-  
-
-  
-  
-
-</div>
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="btn-links mb-3">
-  
-  <a class="btn btn-outline-primary my-1" href="http://www.BioGearsengine.com" target="_blank" rel="noopener">Go to Project Site</a>
-  
-  
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</div>
-
-
-</div>
-
-
-<div class="article-header article-container featured-image-wrapper mt-4 mb-4" style="max-width: 300px; max-height: 287px;">
-  <div style="position: relative">
-    <img src="/project/biogears/featured.png" alt="" class="featured-image">
-    
-  </div>
-</div>
-
-
-
-  <div class="article-container">
-
-    <div class="article-style">
-      
-    </div>
-
-    
-
-
-
-
-
-<div class="article-tags">
-  
-  <a class="badge badge-light" href="/tags/physiology-modeling/">Physiology Modeling</a>
-  
-  <a class="badge badge-light" href="/tags/drug-modeling/">Drug Modeling</a>
-  
-</div>
-
-
-
-<div class="share-box" aria-hidden="true">
-  <ul class="share">
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://twitter.com/intent/tweet?url=/project/biogears/&amp;text=BioGears" target="_blank" rel="noopener" class="share-btn-twitter">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.facebook.com/sharer.php?u=/project/biogears/&amp;t=BioGears" target="_blank" rel="noopener" class="share-btn-facebook">
-          <i class="fab fa-facebook"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="mailto:?subject=BioGears&amp;body=/project/biogears/" target="_blank" rel="noopener" class="share-btn-email">
-          <i class="fas fa-envelope"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://www.linkedin.com/shareArticle?url=/project/biogears/&amp;title=BioGears" target="_blank" rel="noopener" class="share-btn-linkedin">
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://web.whatsapp.com/send?text=BioGears%20/project/biogears/" target="_blank" rel="noopener" class="share-btn-whatsapp">
-          <i class="fab fa-whatsapp"></i>
-        </a>
-      </li>
-    
-      
-      
-      
-        
-      
-      
-      
-      <li>
-        <a href="https://service.weibo.com/share/share.php?url=/project/biogears/&amp;title=BioGears" target="_blank" rel="noopener" class="share-btn-weibo">
-          <i class="fab fa-weibo"></i>
-        </a>
-      </li>
-    
-  </ul>
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-  
   
     
-  
-  
-  
-  <div class="media author-card content-widget-hr">
-    
-      
-      <img class="avatar mr-3 avatar-circle" src="/authors/admin/avatar_huba2d4ab9927040bf281d0658d55e219b_238840_270x270_fill_q90_lanczos_center.jpg" alt="Avatar">
-    
-
-    <div class="media-body">
-      <h5 class="card-title"><a href="/">Austin Baird</a></h5>
-      <h6 class="card-subtitle">BioGears Principal Investigator</h6>
-      <p class="card-text">My interests include mathematical biology, pharmacological modeling, fluid-structure interactions, and physiology models.</p>
-      <ul class="network-icon" aria-hidden="true">
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-    <li>
-      <a href="mailto:ajbaird86@gmail.com" >
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://scholar.google.com/citations?user=mTOarj4AAAAJ&amp;hl=en" target="_blank" rel="noopener">
-        <i class="ai ai-google-scholar"></i>
-      </a>
-    </li>
-  
-    
-    
-    
-      
-    
-    
-    
-    
-    
-      
-    
-    <li>
-      <a href="https://github.com/ajbaird" target="_blank" rel="noopener">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-  
-</ul>
-
-    </div>
-  </div>
-
-
-
-
-<section id="comments">
-  
-    
-<div id="disqus_thread"></div>
-<script>
-  let disqus_config = function () {
-    
-    
-    
-  };
-  (function() {
-    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-      return;
-    }
-    var d = document, s = d.createElement('script'); s.async = true;
-    s.src = 'https://' + "austinbaird-dev" + '.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', +new Date());
-    (d.head || d.body).appendChild(s);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-
-  
-</section>
-
-
-
-
-
-
-  
-  
-
-
-
-    <div class="project-related-pages content-widget-hr">
-      
-      
-
-      
-      
-      
-        <h2>Posts</h2>
-        
-          
-            
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/buildingbiogears/" >Building and running BioGears on a MacOS</a>
-    </h3>
-
-    
-    <div class="article-style">
-      BioGears on a Mac These instructions will mostly be taken from the following link.
-Cloning and Building To begin create a suitable …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
-
-
-<div class="article-metadata">
-
-  
-  
-  
-  
-  <div>
-    
-
-
-
-  
-  <span><a href="/authors/austin-baird/">Austin Baird</a></span>
-
-  </div>
-  
-  
-
-  
-  <span class="article-date">
-    
-    
-      
-    
-    Apr 26, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    5 min read
-  </span>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/buildingbiogears/#disqus_thread"></a>
-  
-
-  
-  
-
-</div>
-
-      
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-          
-        
-          
-            
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="media stream-item">
-  <div class="media-body">
-
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/buildingbiogearsui/" >Building and running the BioGears user interface on a MacOS</a>
-    </h3>
-
-    
-    <div class="article-style">
-      BioGears UI on a Mac These instructions will mostly be taken from the following link.
-Cloning and Building Firs thing we want to do is …
-    </div>
-    
-
-    <div class="stream-meta article-metadata">
-
-      
-
-      
-        
 
 
 <div class="article-metadata">
@@ -1073,26 +593,23 @@ Cloning and Building Firs thing we want to do is …
 
 </div>
 
-      
-    </div>
-
     
 
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-          
-        
-          
-            
 
 
 
 
+
+
+
+
+
+
+
+
+<div class="btn-links mb-3">
+  
+  
 
 
 
@@ -1104,100 +621,254 @@ Cloning and Building Firs thing we want to do is …
   
 
 
-<div class="media stream-item">
-  <div class="media-body">
 
-    <h3 class="article-title mb-0 mt-0">
-      <a href="/post/firsthowto/" >Hemorrhage Treatment HowTo</a>
-    </h3>
 
-    
+
+
+
+
+
+  
+  <a class="btn btn-outline-primary my-1 mr-1" href="/project/biogears/">
+    Project
+  </a>
+  
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+  
+</div>
+
+
+
+  <div class="article-container">
+
     <div class="article-style">
-      Leveraging BioGears libraries to write your own HowTo We have BioGears built and ready to go but the question is, now what? What can we …
+      <h1 id="biogears-ui-on-a-mac">BioGears UI on a Mac</h1>
+<p>These instructions will mostly be taken from the following 
+<a href="https://github.com/ajbaird/ui" target="_blank" rel="noopener">link</a>.</p>
+<h2 id="cloning-and-building">Cloning and Building</h2>
+<p>Firs thing we want to do is fork the UI project 
+<a href="https://github.com/ajbaird/ui" target="_blank" rel="noopener">link</a>. Once you have it forked on your github page, navigate tot the repository and clone the repository into the directory structure of your choice. For this tutorial I'll be cloning the project into <code>~/Development/BioGears/</code>.</p>
+<p>Once cloned we will go through building the GUI. For this to work we first need to have a built copy of BioGears to reference. The git project is structured in such a way that there is a submodule included that once initialized, will clone a copy of the BioGears code base into a <code>./extern/biogears/</code> folder.</p>
+<p>From the root of where you cloned the UI, for me this is <code>BioGears/ui</code>, then in the terminal type <code>git submodule init</code> then make sure you are up to date with <code>git submodule update</code> .</p>
+<p><img src="./biogearsExtern.png" alt="png"></p>
+<p>This command will automatically clone the latest master commit from the BioGears core project. Once BioGears has been pulled from core, we need to build BioGears</p>
+<pre><code>mkdir build-biogears
+cd build-biogears
+cmake ../projectslibbiogears -DCMAKE_INSTALL_PREFIX=${PWD}../build-gui/usr 
+cmake --build . -config Release -target install 
+</code></pre>
+<p>This command will install to the usr folder within the user interface, all build files will be in the build-biogears folder.</p>
+<p><img src="./command.png" alt="png"></p>
+<p>We also need to make sure that Qt is installed on our system. I will not cover cloning and building Qt but it is VERY important to make sure that you download and install Qt version 5.12, otherwise the BioGears UI will not work.</p>
+<p>Now that we have BioGears AND Qt 5.12 installed, we are ready to install the UI, first we want to configure the project using cmake. The easiest way to do this is to navigate to the build directory with the cmake GUI:</p>
+<p><img src="./cmake.png" alt="png"></p>
+<p>Now we need to configure cmake prefix path to be set to where the BioGears core libs are located. We can do this via the command line, or you can set them in the cmakeLists.txt file. For my use, I'm going to open this file in VS code, then append the prefix path to include the BioGears libs, as well as where the Qt install is (this is only if Qt is not included in your environment paths):</p>
+<p><img src="./SetPrefixPaths.png" alt="png"></p>
+<p><strong>Note:</strong> If you are not using VS code you can set the prefix paths either through the cmake UI, OR via the command line.</p>
+<p>Now everything should be ready to run. If you are using VS code and have installed the cmake third party support, you should be able to run the configure command at the bottom of the screen, make sure that you set the compiler for your system (here I'm using clang, via mac). BioGears should build for most modern c++ compilers. Here is an example of my configuration at the bottom of the VS code UI:</p>
+<p><img src="./config.png" alt="png"></p>
+<p>Note to make sure that you have a build folder either created with cmake, or create it yourself via the command line or explorer window. Now you can configure the project. Using VS code you can do this by clicking the cmake button and selecting &ldquo;Release&rdquo;</p>
+<p><img src="./cmakeConfig.png" alt="png"></p>
+<p>Now going left to right, click the &ldquo;build&rdquo; button, this should begin the build for the set configuration. When you click this button it will build all available targets, if you only want to build one target (say the UI) and not the scenario executor (a core biogears executable) then click the button just to the right of &ldquo;build&rdquo; and select the target you are interested in. Everything should compile correctly and there should be a note on where the executable is located:</p>
+<p><img src="./buildUI.png" alt="png"></p>
+<p>Now double check that all of the executables are built and in the appropriate folder, they should be located in the /bin folder under releases, you can see if you select the project to build &ldquo;all&rdquo; there will be the command line utilities and scenario executor in that folder as well as the UI:</p>
+<p><img src="./files.png" alt="png"></p>
+<p>Now lets test and run the application. In order to do this, there is one last thing that we need to do. First, navigate to where the BioGears core runtime directory is, for me its <code>./ui/build-biogears/runtime</code> basically it will be anywhere you built the biogears dependencies. Copy the contents of that folder and drop it into the <code>./ui/build/Release/bin</code> folder. Now that folder should have a lot of content:</p>
+<p><img src="./bin.png" alt="png"></p>
+<p>Once completed you should be able to now click the play arrow in VS studio and have the UI launch!</p>
+<p><img src="./final.png" alt="png"></p>
+<p>If you have other issues while building, feel free to post a comment on the community pages (
+<a href="https://github.com/BioGearsEngine/ui/issues" target="_blank" rel="noopener">link</a>)!</p>
+
     </div>
+
     
 
-    <div class="stream-meta article-metadata">
 
+
+
+
+
+
+<div class="share-box" aria-hidden="true">
+  <ul class="share">
+    
       
-
+      
       
         
-
-
-<div class="article-metadata">
-
-  
-  
-  
-  
-  <div>
-    
-
-
-
-  
-  <span><a href="/authors/austin-baird/">Austin Baird</a></span>
-
-  </div>
-  
-  
-
-  
-  <span class="article-date">
-    
+      
+      
+      
+      <li>
+        <a href="https://twitter.com/intent/tweet?url=/post/buildingbiogearsui/&amp;text=Building%20and%20running%20the%20BioGears%20user%20interface%20on%20a%20MacOS" target="_blank" rel="noopener" class="share-btn-twitter">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </li>
     
       
-    
-    Apr 26, 2020
-  </span>
-  
-
-  
-
-  
-  <span class="middot-divider"></span>
-  <span class="article-reading-time">
-    7 min read
-  </span>
-  
-
-  
-  
-  
-  <span class="middot-divider"></span>
-  <a href="/post/firsthowto/#disqus_thread"></a>
-  
-
-  
-  
-
-</div>
-
       
-    </div>
-
-    
-
-  </div>
-  <div class="ml-3">
-    
-    
-  </div>
-</div>
-
-          
+      
         
       
+      
+      
+      <li>
+        <a href="https://www.facebook.com/sharer.php?u=/post/buildingbiogearsui/&amp;t=Building%20and%20running%20the%20BioGears%20user%20interface%20on%20a%20MacOS" target="_blank" rel="noopener" class="share-btn-facebook">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="mailto:?subject=Building%20and%20running%20the%20BioGears%20user%20interface%20on%20a%20MacOS&amp;body=/post/buildingbiogearsui/" target="_blank" rel="noopener" class="share-btn-email">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://www.linkedin.com/shareArticle?url=/post/buildingbiogearsui/&amp;title=Building%20and%20running%20the%20BioGears%20user%20interface%20on%20a%20MacOS" target="_blank" rel="noopener" class="share-btn-linkedin">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://web.whatsapp.com/send?text=Building%20and%20running%20the%20BioGears%20user%20interface%20on%20a%20MacOS%20/post/buildingbiogearsui/" target="_blank" rel="noopener" class="share-btn-whatsapp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </li>
+    
+      
+      
+      
+        
+      
+      
+      
+      <li>
+        <a href="https://service.weibo.com/share/share.php?url=/post/buildingbiogearsui/&amp;title=Building%20and%20running%20the%20BioGears%20user%20interface%20on%20a%20MacOS" target="_blank" rel="noopener" class="share-btn-weibo">
+          <i class="fab fa-weibo"></i>
+        </a>
+      </li>
+    
+  </ul>
+</div>
 
-      
-      
-      
 
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+  
+  
+  
+  
+  
+  <div class="media author-card content-widget-hr">
+    
+
+    <div class="media-body">
+      <h5 class="card-title"><a href="/authors/austin-baird/"></a></h5>
       
       
-      
+      <ul class="network-icon" aria-hidden="true">
+  
+</ul>
+
     </div>
+  </div>
+
+
+
+
+<section id="comments">
+  
+    
+<div id="disqus_thread"></div>
+<script>
+  let disqus_config = function () {
+    
+    
+    
+  };
+  (function() {
+    if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+      document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+      return;
+    }
+    var d = document, s = d.createElement('script'); s.async = true;
+    s.src = 'https://' + "austinbaird-dev" + '.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+  
+</section>
+
+
+
+
+
+
+  
+  
+
+
+
   </div>
 </article>
 

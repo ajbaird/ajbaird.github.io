@@ -143,6 +143,51 @@ To fix this issue back out to the top directory, for me this will be Core. From 
     </item>
     
     <item>
+      <title>Building and running the BioGears user interface on a MacOS</title>
+      <link>/post/buildingbiogearsui/</link>
+      <pubDate>Sun, 26 Apr 2020 20:00:32 -0400</pubDate>
+      <guid>/post/buildingbiogearsui/</guid>
+      <description>&lt;h1 id=&#34;biogears-ui-on-a-mac&#34;&gt;BioGears UI on a Mac&lt;/h1&gt;
+&lt;p&gt;These instructions will mostly be taken from the following 
+&lt;a href=&#34;https://github.com/ajbaird/ui&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;cloning-and-building&#34;&gt;Cloning and Building&lt;/h2&gt;
+&lt;p&gt;Firs thing we want to do is fork the UI project 
+&lt;a href=&#34;https://github.com/ajbaird/ui&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;. Once you have it forked on your github page, navigate tot the repository and clone the repository into the directory structure of your choice. For this tutorial I&#39;ll be cloning the project into &lt;code&gt;~/Development/BioGears/&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Once cloned we will go through building the GUI. For this to work we first need to have a built copy of BioGears to reference. The git project is structured in such a way that there is a submodule included that once initialized, will clone a copy of the BioGears code base into a &lt;code&gt;./extern/biogears/&lt;/code&gt; folder.&lt;/p&gt;
+&lt;p&gt;From the root of where you cloned the UI, for me this is &lt;code&gt;BioGears/ui&lt;/code&gt;, then in the terminal type &lt;code&gt;git submodule init&lt;/code&gt; then make sure you are up to date with &lt;code&gt;git submodule update&lt;/code&gt; .&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./biogearsExtern.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This command will automatically clone the latest master commit from the BioGears core project. Once BioGears has been pulled from core, we need to build BioGears&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkdir build-biogears
+cd build-biogears
+cmake ../projectslibbiogears -DCMAKE_INSTALL_PREFIX=${PWD}../build-gui/usr 
+cmake --build . -config Release -target install 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This command will install to the usr folder within the user interface, all build files will be in the build-biogears folder.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./command.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;We also need to make sure that Qt is installed on our system. I will not cover cloning and building Qt but it is VERY important to make sure that you download and install Qt version 5.12, otherwise the BioGears UI will not work.&lt;/p&gt;
+&lt;p&gt;Now that we have BioGears AND Qt 5.12 installed, we are ready to install the UI, first we want to configure the project using cmake. The easiest way to do this is to navigate to the build directory with the cmake GUI:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./cmake.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now we need to configure cmake prefix path to be set to where the BioGears core libs are located. We can do this via the command line, or you can set them in the cmakeLists.txt file. For my use, I&#39;m going to open this file in VS code, then append the prefix path to include the BioGears libs, as well as where the Qt install is (this is only if Qt is not included in your environment paths):&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./SetPrefixPaths.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; If you are not using VS code you can set the prefix paths either through the cmake UI, OR via the command line.&lt;/p&gt;
+&lt;p&gt;Now everything should be ready to run. If you are using VS code and have installed the cmake third party support, you should be able to run the configure command at the bottom of the screen, make sure that you set the compiler for your system (here I&#39;m using clang, via mac). BioGears should build for most modern c++ compilers. Here is an example of my configuration at the bottom of the VS code UI:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./config.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Note to make sure that you have a build folder either created with cmake, or create it yourself via the command line or explorer window. Now you can configure the project. Using VS code you can do this by clicking the cmake button and selecting &amp;ldquo;Release&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./cmakeConfig.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now going left to right, click the &amp;ldquo;build&amp;rdquo; button, this should begin the build for the set configuration. When you click this button it will build all available targets, if you only want to build one target (say the UI) and not the scenario executor (a core biogears executable) then click the button just to the right of &amp;ldquo;build&amp;rdquo; and select the target you are interested in. Everything should compile correctly and there should be a note on where the executable is located:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./buildUI.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now double check that all of the executables are built and in the appropriate folder, they should be located in the /bin folder under releases, you can see if you select the project to build &amp;ldquo;all&amp;rdquo; there will be the command line utilities and scenario executor in that folder as well as the UI:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./files.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Now lets test and run the application. In order to do this, there is one last thing that we need to do. First, navigate to where the BioGears core runtime directory is, for me its &lt;code&gt;./ui/build-biogears/runtime&lt;/code&gt; basically it will be anywhere you built the biogears dependencies. Copy the contents of that folder and drop it into the &lt;code&gt;./ui/build/Release/bin&lt;/code&gt; folder. Now that folder should have a lot of content:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./bin.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Once completed you should be able to now click the play arrow in VS studio and have the UI launch!&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;./final.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If you have other issues while building, feel free to post a comment on the community pages (
+&lt;a href=&#34;https://github.com/BioGearsEngine/ui/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;)!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hemorrhage Treatment HowTo</title>
       <link>/post/firsthowto/</link>
       <pubDate>Sun, 26 Apr 2020 20:00:32 -0400</pubDate>

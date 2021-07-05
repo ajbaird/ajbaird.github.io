@@ -85,6 +85,14 @@
     </item>
     
     <item>
+      <title>A multiscale computational model of angiogenesis after traumatic brain injury, investigating the role location plays in volumetric recovery</title>
+      <link>/publication/tbimodel/</link>
+      <pubDate>Mon, 01 Feb 2021 00:00:00 +0000</pubDate>
+      <guid>/publication/tbimodel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>BurnCare tablet trainer to enhance burn injury care and treatment</title>
       <link>/publication/burntablet/</link>
       <pubDate>Fri, 30 Oct 2020 00:00:00 +0000</pubDate>
@@ -360,16 +368,12 @@ cmake --build . -config Release -target install
 &lt;li&gt;Use the animation library to generate videos of your data&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;command-line-arguments&#34;&gt;Command Line Arguments&lt;/h2&gt;
-&lt;p&gt;&lt;img src=&#34;./runHem.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;check-paths-and-verify-data&#34;&gt;Check Paths and Verify Data&lt;/h2&gt;
 &lt;h2 id=&#34;formatting-graphs-using-matplotlib&#34;&gt;Formatting Graphs Using Matplotlib&lt;/h2&gt;
 &lt;h2 id=&#34;animating-the-data&#34;&gt;Animating the Data&lt;/h2&gt;
 &lt;p&gt;If it is running correctly your console screen should look the like this&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;./consol.png&#34; alt=&#34;png&#34;&gt;&lt;/p&gt;
 &lt;p&gt;To see the full set of code developed for this tutorial, please see the 
 &lt;a href=&#34;https://github.com/ajbaird/TBISimulator/blob/master/animateData.py&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;github page&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;If you have other issues feel free to post a comment on the community pages (
-&lt;a href=&#34;https://github.com/BioGearsEngine/core/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;link&lt;/a&gt;)!&lt;/p&gt;
 </description>
     </item>
     
